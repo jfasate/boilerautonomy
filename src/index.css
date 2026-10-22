@@ -87,3 +87,7 @@ ul {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}

@@ -10,8 +10,9 @@ export const site = {
   // Purdue marks need approval from Purdue Brand Studio / Trademarks & Licensing.
   // After approval, put the file in public/media/ and set e.g. 'purdue-cobrand.svg'.
   universityLogo: '',
-  // TODO: replace with an interest form (Google Form, BoilerLink, etc.) or leave '' to use email.
-  joinFormUrl: '',
+  // Web3Forms access key: get one free at https://web3forms.com by entering the email
+  // that should receive applications. Until it is set, the form opens the visitor's email app.
+  formAccessKey: '',
   // TODO: add or remove links. Empty strings are hidden.
   social: {
     github: '',
@@ -91,6 +92,11 @@ export const roadmap = [
   { phase: '03', status: 'Next', title: 'Compete', body: 'Enter F1TENTH races with a team-built car and stack.' },
   { phase: '04', status: 'Future', title: 'Scale up', body: 'Multi-car racing, simulation-to-real research and larger platforms.' },
 ]
+
+export const joinForm = {
+  intro: 'Tell us a bit about yourself. It takes about two minutes, and we will email you back.',
+  years: ['Freshman', 'Sophomore', 'Junior', 'Senior', "Master's", 'PhD'],
+}
 
 export const teams = [
   { title: 'Perception', body: 'LiDAR processing, mapping, opponent detection.' },

@@ -14,6 +14,20 @@ Photos and videos are in [`public/media/`](public/media/). To swap one, keep the
 
 Keep media small: photos about 2000 px wide in WebP format (about 200 KB), and videos under about 15 MB.
 
+## Join form (applications by email)
+
+Every "Join the team" button opens an application form. You can also share it directly: `https://<site>/#apply`.
+
+Submissions are emailed to you by [Web3Forms](https://web3forms.com) (free, 250 per month):
+
+1. Go to https://web3forms.com, enter the email that should receive applications, and click **Create Access Key**.
+2. Copy the key from the email they send you.
+3. Paste it into `formAccessKey` in `src/content.js`, then commit and push.
+
+Each application email has the applicant's details, and **Reply** goes straight to the applicant. The key is safe to keep in a public repo: it can only send form emails to you.
+
+Until the key is set, the form opens the visitor's own email app with their answers filled in.
+
 ## Run it locally
 
 Requires Node 18 or newer.

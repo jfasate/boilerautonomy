@@ -8,6 +8,8 @@ import {
   AnimatePresence,
 } from 'motion/react'
 import { site, nav, people, hero, mission, specs, hotspots, stack, roadmap, teams } from './content'
+import JoinForm from './JoinForm'
+import useApplyOpen from './useApplyOpen'
 import './App.css'
 
 const media = (file) => `${import.meta.env.BASE_URL}media/${file}`
@@ -15,7 +17,6 @@ const ease = [0.22, 1, 0.36, 1]
 
 const mailto = (subject) =>
   `mailto:${site.emails.join(',')}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`
-const joinHref = site.joinFormUrl || mailto('Joining Boiler Autonomy')
 
 function Reveal({ children, delay = 0, className, as = 'div' }) {
   const Tag = motion[as]
@@ -63,7 +64,7 @@ function Header() {
             <a key={item.href} href={item.href}>{item.label}</a>
           ))}
         </nav>
-        <a className="btn btn-small btn-gold nav-cta" href="#join">Join the team</a>
+        <a className="btn btn-small btn-gold nav-cta" href="#apply">Join the team</a>
         <button
           className="menu-btn"
           aria-expanded={open}
@@ -84,7 +85,7 @@ function Header() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease }}
           >
-            {[...nav, { label: 'Join the team', href: '#join' }].map((item) => (
+            {[...nav, { label: 'Join the team', href: '#apply' }].map((item) => (
               <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
             ))}
           </motion.nav>
@@ -151,7 +152,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease, delay: 0.85 }}
         >
-          <a className="btn btn-gold" href="#join">Join the team</a>
+          <a className="btn btn-gold" href="#apply">Join the team</a>
           <a className="btn btn-ghost" href="#racing">Watch it drive</a>
         </motion.div>
       </motion.div>
@@ -396,7 +397,7 @@ function Join() {
             </Reveal>
           </div>
           <Reveal delay={0.15}>
-            <a className="btn btn-gold btn-large" href={joinHref}>Join Boiler Autonomy</a>
+            <a className="btn btn-gold btn-large" href="#apply">Apply to join</a>
           </Reveal>
         </div>
         <ul className="teams">
@@ -466,6 +467,8 @@ function ScrollProgress() {
 }
 
 export default function App() {
+  const [applyOpen, closeApply] = useApplyOpen()
+
   return (
     <MotionConfig reducedMotion="user">
       <a className="skip" href="#mission">Skip to content</a>
@@ -484,6 +487,7 @@ export default function App() {
         <Support />
       </main>
       <Footer />
+      <JoinForm open={applyOpen} onClose={closeApply} />
     </MotionConfig>
   )
 }
