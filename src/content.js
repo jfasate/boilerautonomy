@@ -40,7 +40,7 @@ export const people = [
     linkedin: 'https://www.linkedin.com/in/jayesh-fasate-ba31021a6/',
   },
   {
-    name: 'Bala Malla Reddy Kolanu',
+    name: 'Bala Reddy',
     role: 'Founding team',
     email: 'bkolanu@purdue.edu',
     linkedin: 'https://www.linkedin.com/in/balamallareddykolanu/',
