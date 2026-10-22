@@ -9,7 +9,7 @@ export const site = {
   emails: ['jfasate@purdue.edu', 'bkolanu@purdue.edu'],
   // Purdue marks need approval from Purdue Brand Studio / Trademarks & Licensing.
   // After approval, put the file in public/media/ and set e.g. 'purdue-cobrand.svg'.
-  universityLogo: '',
+  universityLogo: 'purdue-logo.png',
   // Web3Forms access key: get one free at https://web3forms.com by entering the email
   // that should receive applications. Until it is set, the form opens the visitor's email app.
   formAccessKey: '4721bfca-ccd8-4369-838d-693687670616',

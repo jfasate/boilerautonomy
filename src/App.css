@@ -164,6 +164,7 @@
 }
 
 .logo span {
+  white-space: nowrap;
   font-family: var(--font-display);
   font-weight: 800;
   font-stretch: 75%;
@@ -171,6 +172,47 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--text);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.brand-university {
+  height: 30px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.brand-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 600px) {
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-university {
+    height: 20px;
+  }
+
+  .brand-divider {
+    height: 20px;
+  }
+
+  .brand .logo svg {
+    display: none;
+  }
+
+  .brand .logo span {
+    font-size: 16px;
+  }
 }
 
 .nav-desktop {
@@ -227,7 +269,7 @@
   margin-bottom: 20px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1180px) {
   .nav-desktop,
   .nav-cta {
     display: none;

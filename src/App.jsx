@@ -59,7 +59,15 @@ function Header() {
   return (
     <header className={`header ${solid || open ? 'is-solid' : ''}`}>
       <div className="header-inner">
-        <Logo />
+        <div className="brand">
+          {site.universityLogo && (
+            <>
+              <img className="brand-university" src={media(site.universityLogo)} alt={site.school} width="648" height="120" />
+              <span className="brand-divider" aria-hidden="true" />
+            </>
+          )}
+          <Logo />
+        </div>
         <nav className="nav-desktop" aria-label="Primary">
           {nav.map((item) => (
             <a key={item.href} href={item.href}>{item.label}</a>

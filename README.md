@@ -62,4 +62,4 @@ Add the domain under **Settings → Pages → Custom domain**, and create the DN
 
 ## Purdue branding
 
-Use of Purdue logos and marks requires approval. See [Purdue Trademarks and Licensing](https://www.purdue.edu/trademarks-licensing/) and [Purdue Brand Studio](https://www.purdue.edu/brand-studio/brand/logos-usage/). When you have an approved file, put it in `public/media/` and set `universityLogo` in `src/content.js`.
+The header and footer show `public/media/purdue-logo.png`, a white-text version of the logo for dark backgrounds, set by `universityLogo` in `src/content.js`. Use of Purdue marks requires approval: see [Purdue Trademarks and Licensing](https://www.purdue.edu/trademarks-licensing/) and [Purdue Brand Studio](https://www.purdue.edu/brand-studio/brand/logos-usage/). If Brand Studio gives you an official reverse (dark-background) file, replace `purdue-logo.png` with it.
