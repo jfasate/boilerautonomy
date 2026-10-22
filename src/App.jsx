@@ -7,7 +7,8 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from 'motion/react'
-import { site, nav, people, hero, mission, specs, hotspots, stack, roadmap, teams } from './content'
+import { site, nav, people, hero, mission, specs, stack, roadmap, teams } from './content'
+import CarExplorer from './CarExplorer'
 import JoinForm from './JoinForm'
 import useApplyOpen from './useApplyOpen'
 import './App.css'
@@ -201,8 +202,6 @@ function Specs() {
 }
 
 function Platform() {
-  const [active, setActive] = useState(0)
-
   return (
     <section className="section" id="platform">
       <div className="container">
@@ -214,46 +213,9 @@ function Platform() {
           </Reveal>
         </div>
 
-        <div className="platform">
-          <Reveal className="platform-figure">
-            <img
-              src={media('car-topdown.webp')}
-              alt="Top-down view of the Boiler Autonomy car showing the LiDAR, onboard computer, batteries and wiring"
-              loading="lazy"
-              width="2000"
-              height="1125"
-            />
-            {hotspots.map((h, i) => (
-              <button
-                key={h.title}
-                className={`hotspot ${active === i ? 'is-active' : ''}`}
-                style={{ left: `${h.x}%`, top: `${h.y}%` }}
-                onClick={() => setActive(i)}
-                onMouseEnter={() => setActive(i)}
-                aria-label={h.title}
-              >
-                {i + 1}
-              </button>
-            ))}
-          </Reveal>
-          <ol className="hotspot-list">
-            {hotspots.map((h, i) => (
-              <li key={h.title}>
-                <button
-                  className={active === i ? 'is-active' : ''}
-                  onClick={() => setActive(i)}
-                  onMouseEnter={() => setActive(i)}
-                >
-                  <span className="hotspot-n">{String(i + 1).padStart(2, '0')}</span>
-                  <span>
-                    <strong>{h.title}</strong>
-                    <span className="hotspot-body">{h.body}</span>
-                  </span>
-                </button>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <Reveal>
+          <CarExplorer />
+        </Reveal>
 
         <div className="gallery">
           <Reveal className="gallery-item">

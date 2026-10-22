@@ -12,7 +12,7 @@ export const site = {
   universityLogo: '',
   // Web3Forms access key: get one free at https://web3forms.com by entering the email
   // that should receive applications. Until it is set, the form opens the visitor's email app.
-  formAccessKey: '',
+  formAccessKey: '4721bfca-ccd8-4369-838d-693687670616',
   // TODO: add or remove links. Empty strings are hidden.
   social: {
     github: '',
@@ -71,11 +71,58 @@ export const specs = [
 ]
 
 // Hotspots are placed in percent of the top-down photo (x from left, y from top).
+// Each one opens a detail card: a short tagline, up to four specs, and a longer description.
 export const hotspots = [
-  { x: 71, y: 47, title: 'Hokuyo UTM-30LX LiDAR', body: 'Sweeps 270° up to 30 m, 40 times a second, to map walls and opponents.' },
-  { x: 51, y: 46, title: 'NVIDIA Jetson Orin Nano', body: 'Runs perception, planning and control on the car itself.' },
-  { x: 47, y: 25, title: 'LiPo power', body: 'Battery packs for the drive system and the electronics.' },
-  { x: 32, y: 48, title: 'Power & motor electronics', body: 'Takes software commands and turns them into throttle and steering.' },
+  {
+    x: 71,
+    y: 47,
+    title: 'Hokuyo UTM-30LX LiDAR',
+    tagline: 'The eyes of the car.',
+    specs: [
+      ['Field of view', '270°'],
+      ['Range', '0.1 – 30 m'],
+      ['Scan rate', '40 Hz'],
+      ['Resolution', '0.25°'],
+    ],
+    body: 'A 2D laser scanner mounted at the nose. Every 25 ms it returns 1,080 distance readings across a 270° arc. That is enough to see the track walls, find gaps and spot opponents, even at full speed.',
+  },
+  {
+    x: 51,
+    y: 46,
+    title: 'NVIDIA Jetson Orin Nano',
+    tagline: 'The brain, on board.',
+    specs: [
+      ['CPU', '6-core Arm Cortex-A78AE'],
+      ['GPU', 'NVIDIA Ampere'],
+      ['Runs', 'Full autonomy stack'],
+    ],
+    body: 'Every decision is made on the car itself, with no laptop in the loop. The Orin Nano fuses LiDAR scans and RealSense D435 depth, works out where the car is, plans a racing line and sends steering and throttle commands, many times per second.',
+  },
+  {
+    x: 47,
+    y: 25,
+    title: 'LiPo power',
+    tagline: 'Energy for speed and compute.',
+    // TODO: confirm pack count and capacity.
+    specs: [
+      ['Chemistry', 'Lithium polymer'],
+      ['Cells', '3S'],
+      ['Capacity', '5000 mAh'],
+    ],
+    body: 'Lithium polymer packs ride low along the sides of the chassis. They keep the center of mass low and power both the drive motor and the onboard electronics.',
+  },
+  {
+    x: 32,
+    y: 48,
+    title: 'Power & motor electronics',
+    tagline: 'Where code becomes motion.',
+    // TODO: add the motor controller model (e.g. VESC) and specs.
+    specs: [
+      ['Input', 'Speed & steering commands'],
+      ['Output', 'Motor current & servo angle'],
+    ],
+    body: 'This board takes the speed and steering commands from the computer and turns them into motor current and servo angle. It closes the loop between software and the tires.',
+  },
 ]
 
 // TODO: update to match the algorithms the team actually runs.
