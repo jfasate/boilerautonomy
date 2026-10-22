@@ -858,7 +858,7 @@
   }
 }
 
-/* ---------- Roadmap ---------- */
+/* ---------- Progress ---------- */
 
 .roadmap {
   display: grid;
@@ -1309,6 +1309,7 @@
   font-size: 12px;
   color: var(--muted);
 }
+
 
 
 

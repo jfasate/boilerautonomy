@@ -27,7 +27,7 @@ export const nav = [
   { label: 'Platform', href: '#platform' },
   { label: 'Autonomy', href: '#autonomy' },
   { label: 'Racing', href: '#racing' },
-  { label: 'Roadmap', href: '#roadmap' },
+  { label: 'Progress', href: '#progress' },
   { label: 'Team', href: '#team' },
 ]
 
@@ -133,12 +133,16 @@ export const stack = [
   { n: '04', title: 'Control', body: 'Track the plan at speed with steering and throttle control on the edge of grip.' },
 ]
 
-export const roadmap = [
-  { phase: '01', status: 'Done', title: 'Solo build', body: 'One car built and tuned. Autonomous laps on a test track.' },
-  { phase: '02', status: 'Now', title: 'Club launch', body: 'Recruit members, set up sub-teams and a shared code base.' },
-  { phase: '03', status: 'Next', title: 'Compete', body: 'Enter F1TENTH races with a team-built car and stack.' },
-  { phase: '04', status: 'Future', title: 'Scale up', body: 'Multi-car racing, simulation-to-real research and larger platforms.' },
-]
+export const progress = {
+  title: 'Pushing to the limit.',
+  lede: 'The hardware is built. Now we are pushing our perception and control stack to run the car at the edge of its speed limit.',
+  items: [
+    { status: 'Done', title: 'Hardware', body: 'Car built and running with a Hokuyo LiDAR, RealSense D435 and Jetson Orin Nano on board.' },
+    { status: 'Now', title: 'Perception', body: 'Faster, more reliable sensing of walls, free space and opponents at speed.' },
+    { status: 'Now', title: 'Control', body: 'Controllers that hold the racing line right at the limit of grip.' },
+    { status: 'Goal', title: 'Edge of speed', body: 'Run the car at the edge of its speed limit, lap after lap.' },
+  ],
+}
 
 export const joinForm = {
   intro: 'Tell us a bit about yourself. It takes about two minutes, and we will email you back.',

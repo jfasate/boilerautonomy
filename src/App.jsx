@@ -7,7 +7,7 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from 'motion/react'
-import { site, nav, people, hero, mission, specs, stack, roadmap, teams } from './content'
+import { site, nav, people, hero, mission, specs, stack, progress, teams } from './content'
 import CarExplorer from './CarExplorer'
 import JoinForm from './JoinForm'
 import useApplyOpen from './useApplyOpen'
@@ -302,19 +302,20 @@ function Racing() {
   )
 }
 
-function Roadmap() {
+function Progress() {
   return (
-    <section className="section section-alt" id="roadmap">
+    <section className="section section-alt" id="progress">
       <div className="container">
         <div className="section-head">
-          <Label>Roadmap</Label>
-          <Reveal as="h2" className="h2">From one car to a team.</Reveal>
+          <Label>Where we are</Label>
+          <Reveal as="h2" className="h2">{progress.title}</Reveal>
+          <Reveal as="p" className="lede" delay={0.1}>{progress.lede}</Reveal>
         </div>
         <ol className="roadmap">
-          {roadmap.map((r, i) => (
-            <Reveal as="li" key={r.phase} delay={i * 0.08} className={`road ${r.status === 'Now' ? 'is-now' : ''}`}>
+          {progress.items.map((r, i) => (
+            <Reveal as="li" key={r.title} delay={i * 0.08} className={`road ${r.status === 'Now' ? 'is-now' : ''}`}>
               <div className="road-top">
-                <span className="road-phase">{r.phase}</span>
+                <span className="road-phase">{String(i + 1).padStart(2, '0')}</span>
                 <span className="road-status">{r.status}</span>
               </div>
               <h3>{r.title}</h3>
@@ -451,7 +452,7 @@ export default function App() {
         <Platform />
         <Autonomy />
         <Racing />
-        <Roadmap />
+        <Progress />
         <Team />
         <Join />
         <Support />
