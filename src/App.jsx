@@ -336,20 +336,30 @@ function Team() {
           <Label>Team</Label>
           <Reveal as="h2" className="h2">The people behind the car.</Reveal>
         </div>
-        <ul className="people">
-          {people.map((p, i) => (
-            <Reveal as="li" key={p.email} delay={i * 0.08} className="person">
-              <p className="person-role">{p.role}</p>
-              <h3>{p.name}</h3>
-              <div className="person-links">
-                <a href={`mailto:${p.email}`}>{p.email}</a>
-                {p.linkedin && (
-                  <a href={p.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
-                )}
-              </div>
-            </Reveal>
-          ))}
-        </ul>
+        {[
+          ['Principal Investigators', people.filter((p) => p.role === 'Principal Investigator')],
+          ['Student team', people.filter((p) => p.role !== 'Principal Investigator')],
+        ].map(([groupLabel, group]) => (
+          <div className="people-group" key={groupLabel}>
+            <p className="people-label">{groupLabel}</p>
+            <ul className="people">
+              {group.map((p, i) => (
+                <Reveal as="li" key={p.name} delay={i * 0.08} className="person">
+                  <p className="person-role">{p.role}</p>
+                  <h3>{p.name}</h3>
+                  {(p.email || p.linkedin) && (
+                    <div className="person-links">
+                      {p.email && <a href={`mailto:${p.email}`}>{p.email}</a>}
+                      {p.linkedin && (
+                        <a href={p.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                      )}
+                    </div>
+                  )}
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   )

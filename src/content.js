@@ -31,8 +31,16 @@ export const nav = [
   { label: 'Team', href: '#team' },
 ]
 
-// Edit roles as the club grows; add new members to this list.
+// Edit roles as the club grows; add new members to this list. email and linkedin are optional.
 export const people = [
+  {
+    name: 'Prof. Lingxi Li',
+    role: 'Principal Investigator',
+  },
+  {
+    name: 'Prof. Samuel Labi',
+    role: 'Principal Investigator',
+  },
   {
     name: 'Jayesh Fasate',
     role: 'Founding team',

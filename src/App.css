@@ -932,8 +932,29 @@
 
 .people {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.people-group + .people-group {
+  margin-top: 48px;
+}
+
+.people-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 700px) {
+  .people {
+    grid-template-columns: 1fr;
+  }
 }
 
 .person {
@@ -958,7 +979,11 @@
   text-transform: uppercase;
   font-size: clamp(30px, 3vw, 40px);
   line-height: 1;
-  margin: 20px 0 28px;
+  margin: 20px 0 0;
+}
+
+.person-links {
+  margin-top: 28px;
 }
 
 .person-links {
@@ -1309,6 +1334,8 @@
   font-size: 12px;
   color: var(--muted);
 }
+
+
 
 
 
