@@ -16,8 +16,13 @@ import './App.css'
 const media = (file) => `${import.meta.env.BASE_URL}media/${file}`
 const ease = [0.22, 1, 0.36, 1]
 
-const mailto = (subject) =>
-  `mailto:${site.emails.join(',')}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`
+const mailto = (subject, to = site.emails, cc = []) => {
+  const params = [
+    cc.length && `cc=${cc.join(',')}`,
+    subject && `subject=${encodeURIComponent(subject)}`,
+  ].filter(Boolean)
+  return `mailto:${to.join(',')}${params.length ? `?${params.join('&')}` : ''}`
+}
 
 function Reveal({ children, delay = 0, className, as = 'div' }) {
   const Tag = motion[as]
@@ -403,7 +408,7 @@ function Support() {
           Sponsors fund the hardware, travel and competition fees that turn students into autonomy engineers. Partner with us and meet them early.
         </Reveal>
         <Reveal delay={0.2}>
-          <a className="btn btn-ghost" href={mailto('Sponsoring Boiler Autonomy')}>Become a sponsor</a>
+          <a className="btn btn-ghost" href={mailto('Sponsoring Boiler Autonomy', site.sponsorEmail.to, site.sponsorEmail.cc)}>Become a sponsor</a>
         </Reveal>
       </div>
     </section>

@@ -5,8 +5,13 @@ export const site = {
   name: 'Boiler Autonomy',
   school: 'Purdue University',
   location: 'West Lafayette, Indiana',
-  // Join / sponsor / contact emails go to every address here.
+  // Join / contact emails go to every address here.
   emails: ['jfasate@purdue.edu', 'bkolanu@purdue.edu'],
+  // "Become a sponsor" emails go to the PI, with the students on CC.
+  sponsorEmail: {
+    to: ['lingxili@purdue.edu'],
+    cc: ['jfasate@purdue.edu', 'bkolanu@purdue.edu'],
+  },
   // Purdue marks need approval from Purdue Brand Studio / Trademarks & Licensing.
   // After approval, put the file in public/media/ and set e.g. 'purdue-cobrand.svg'.
   universityLogo: 'purdue-logo.png',
