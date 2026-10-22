@@ -711,6 +711,59 @@
   }
 }
 
+/* ---------- Team ---------- */
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 16px;
+}
+
+.person {
+  padding: 32px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--gold);
+}
+
+.person-role {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.person h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 75%;
+  text-transform: uppercase;
+  font-size: clamp(30px, 3vw, 40px);
+  line-height: 1;
+  margin: 20px 0 28px;
+}
+
+.person-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 15px;
+}
+
+.person-links a {
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
+  overflow-wrap: anywhere;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.person-links a:hover {
+  color: var(--text);
+  border-color: var(--gold);
+}
+
 /* ---------- Join ---------- */
 
 .join-head {
@@ -849,4 +902,6 @@
   font-size: 12px;
   color: var(--muted);
 }
+
+
 

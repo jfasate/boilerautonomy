@@ -7,13 +7,15 @@ import {
   useMotionValueEvent,
   AnimatePresence,
 } from 'motion/react'
-import { site, nav, hero, mission, specs, hotspots, stack, roadmap, teams } from './content'
+import { site, nav, people, hero, mission, specs, hotspots, stack, roadmap, teams } from './content'
 import './App.css'
 
 const media = (file) => `${import.meta.env.BASE_URL}media/${file}`
 const ease = [0.22, 1, 0.36, 1]
 
-const joinHref = site.joinFormUrl || `mailto:${site.email}?subject=Joining%20Boiler%20Autonomy`
+const mailto = (subject) =>
+  `mailto:${site.emails.join(',')}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}`
+const joinHref = site.joinFormUrl || mailto('Joining Boiler Autonomy')
 
 function Reveal({ children, delay = 0, className, as = 'div' }) {
   const Tag = motion[as]
@@ -354,6 +356,33 @@ function Roadmap() {
   )
 }
 
+function Team() {
+  return (
+    <section className="section" id="team">
+      <div className="container">
+        <div className="section-head">
+          <Label>Team</Label>
+          <Reveal as="h2" className="h2">The people behind the car.</Reveal>
+        </div>
+        <ul className="people">
+          {people.map((p, i) => (
+            <Reveal as="li" key={p.email} delay={i * 0.08} className="person">
+              <p className="person-role">{p.role}</p>
+              <h3>{p.name}</h3>
+              <div className="person-links">
+                <a href={`mailto:${p.email}`}>{p.email}</a>
+                {p.linkedin && (
+                  <a href={p.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
+                )}
+              </div>
+            </Reveal>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )
+}
+
 function Join() {
   return (
     <section className="section join" id="join">
@@ -392,7 +421,7 @@ function Support() {
           Sponsors fund the hardware, travel and competition fees that turn students into autonomy engineers. Partner with us and meet them early.
         </Reveal>
         <Reveal delay={0.2}>
-          <a className="btn btn-ghost" href={`mailto:${site.email}?subject=Sponsoring%20Boiler%20Autonomy`}>Become a sponsor</a>
+          <a className="btn btn-ghost" href={mailto('Sponsoring Boiler Autonomy')}>Become a sponsor</a>
         </Reveal>
       </div>
     </section>
@@ -418,7 +447,7 @@ function Footer() {
             {nav.map((item) => (
               <a key={item.href} href={item.href}>{item.label}</a>
             ))}
-            <a href={`mailto:${site.email}`}>Contact</a>
+            <a href={mailto()}>Contact</a>
             {socials.map(([name, url]) => (
               <a key={name} href={url} target="_blank" rel="noreferrer">{name}</a>
             ))}
@@ -450,6 +479,7 @@ export default function App() {
         <Autonomy />
         <Racing />
         <Roadmap />
+        <Team />
         <Join />
         <Support />
       </main>

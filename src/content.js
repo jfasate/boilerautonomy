@@ -5,8 +5,8 @@ export const site = {
   name: 'Boiler Autonomy',
   school: 'Purdue University',
   location: 'West Lafayette, Indiana',
-  // TODO: replace with the club's shared inbox.
-  email: 'CHANGE-ME@purdue.edu',
+  // Join / sponsor / contact emails go to every address here.
+  emails: ['jfasate@purdue.edu', 'bkolanu@purdue.edu'],
   // Purdue marks need approval from Purdue Brand Studio / Trademarks & Licensing.
   // After approval, put the file in public/media/ and set e.g. 'purdue-cobrand.svg'.
   universityLogo: '',
@@ -27,6 +27,23 @@ export const nav = [
   { label: 'Autonomy', href: '#autonomy' },
   { label: 'Racing', href: '#racing' },
   { label: 'Roadmap', href: '#roadmap' },
+  { label: 'Team', href: '#team' },
+]
+
+// Edit roles as the club grows; add new members to this list.
+export const people = [
+  {
+    name: 'Jayesh Fasate',
+    role: 'Founding team',
+    email: 'jfasate@purdue.edu',
+    linkedin: 'https://www.linkedin.com/in/jayesh-fasate-ba31021a6/',
+  },
+  {
+    name: 'Bala Malla Reddy Kolanu',
+    role: 'Founding team',
+    email: 'bkolanu@purdue.edu',
+    linkedin: 'https://www.linkedin.com/in/balamallareddykolanu/',
+  },
 ]
 
 export const hero = {

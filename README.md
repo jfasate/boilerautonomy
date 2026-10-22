@@ -8,7 +8,7 @@ Built with React, Vite and [Motion](https://motion.dev). Hosted free on GitHub P
 
 Almost all text is in [`src/content.js`](src/content.js): the hero, mission, specs, car hotspots, autonomy stack, roadmap, sub-teams, email and social links. Change the text there and the page updates.
 
-Before launch, fill in the items marked `TODO` in that file, especially `email`.
+Before launch, check the items marked `TODO` in that file. Team members and contact emails are in `people` and `site.emails`.
 
 Photos and videos are in [`public/media/`](public/media/). To swap one, keep the same file name, or update the path in `src/App.jsx`.
 
