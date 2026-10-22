@@ -36,6 +36,7 @@ export const people = [
   {
     name: 'Prof. Lingxi Li',
     role: 'Principal Investigator',
+    email: 'lingxili@purdue.edu',
   },
   {
     name: 'Jayesh Fasate',
