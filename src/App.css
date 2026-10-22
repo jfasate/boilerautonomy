@@ -36,11 +36,10 @@
 .h2 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: clamp(40px, 6.5vw, 88px);
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  font-size: clamp(28px, 4.4vw, 60px);
+  line-height: 1.08;
+  letter-spacing: 0;
 }
 
 .lede {
@@ -51,7 +50,7 @@
 }
 
 .statement {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: clamp(30px, 4.4vw, 60px);
   line-height: 1.12;
@@ -159,19 +158,36 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--gold);
+  gap: 12px;
 }
 
-.logo span {
+.logo-mark {
+  height: 30px;
+  width: auto;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-weight: 800;
-  font-stretch: 75%;
-  font-size: 19px;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
+  line-height: 1;
+}
+
+.logo-name {
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.1em;
   color: var(--text);
+}
+
+.logo-sub {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 9px;
+  letter-spacing: 0.52em;
+  color: var(--gold);
 }
 
 .brand {
@@ -206,12 +222,21 @@
     height: 20px;
   }
 
-  .brand .logo svg {
-    display: none;
+  .logo {
+    gap: 8px;
   }
 
-  .brand .logo span {
-    font-size: 16px;
+  .logo-mark {
+    height: 22px;
+  }
+
+  .logo-name {
+    font-size: 12px;
+  }
+
+  .logo-sub {
+    font-size: 7px;
+    letter-spacing: 0.4em;
   }
 }
 
@@ -257,9 +282,8 @@
 .nav-mobile a {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 20px;
   padding: 10px 0;
   border-top: 1px solid var(--line);
 }
@@ -317,11 +341,10 @@
 .hero-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: clamp(56px, 12vw, 176px);
-  line-height: 0.88;
-  letter-spacing: -0.02em;
+  font-size: clamp(34px, 7.6vw, 112px);
+  line-height: 1.02;
+  letter-spacing: 0;
 }
 
 .line-mask {
@@ -418,8 +441,8 @@
 .spec-value {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
-  font-size: clamp(40px, 5vw, 72px);
+  font-size: clamp(24px, 3vw, 42px);
+  text-transform: uppercase;
   line-height: 1;
   color: var(--gold);
 }
@@ -669,10 +692,9 @@
 .detail-title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: clamp(28px, 2.6vw, 38px);
-  line-height: 0.98;
+  font-size: clamp(18px, 1.6vw, 23px);
+  line-height: 1.2;
   margin: 10px 0 20px;
 }
 
@@ -698,8 +720,8 @@
 
 .detail-specs dd {
   margin: 4px 0 0;
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: var(--font-body);
+  font-weight: 600;
   font-size: 17px;
   line-height: 1.2;
 }
@@ -791,9 +813,8 @@
 .stack-item h3 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 21px;
   margin: 48px 0 12px;
 }
 
@@ -900,9 +921,8 @@
 .road h3 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: 32px;
+  font-size: 19px;
   margin: 36px 0 10px;
 }
 
@@ -975,10 +995,9 @@
 .person h3 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
   text-transform: uppercase;
-  font-size: clamp(30px, 3vw, 40px);
-  line-height: 1;
+  font-size: clamp(19px, 1.9vw, 25px);
+  line-height: 1.2;
   margin: 20px 0 0;
 }
 
@@ -1039,9 +1058,9 @@
 }
 
 .team h3 {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 18px;
   margin-bottom: 8px;
 }
 
@@ -1089,7 +1108,7 @@
 }
 
 .apply-panel .h2 {
-  font-size: clamp(36px, 5vw, 60px);
+  font-size: clamp(24px, 3.4vw, 40px);
   padding-right: 80px;
 }
 
@@ -1295,6 +1314,11 @@
   flex-wrap: wrap;
 }
 
+.footer-logo {
+  width: 220px;
+  height: auto;
+}
+
 .footer-note {
   margin-top: 14px;
   color: var(--muted);
@@ -1319,10 +1343,9 @@
   margin-top: clamp(48px, 8vw, 96px);
   font-family: var(--font-display);
   font-weight: 800;
-  font-stretch: 75%;
-  font-size: clamp(44px, 11.5vw, 172px);
+  font-size: clamp(22px, 6.2vw, 92px);
   line-height: 0.85;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   white-space: nowrap;
   color: transparent;
   -webkit-text-stroke: 1px rgba(207, 185, 145, 0.45);
@@ -1334,6 +1357,8 @@
   font-size: 12px;
   color: var(--muted);
 }
+
+
 
 
 

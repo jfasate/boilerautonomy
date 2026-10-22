@@ -60,6 +60,12 @@ After that, every push to `main` updates the site in about a minute.
 
 Add the domain under **Settings → Pages → Custom domain**, and create the DNS record that GitHub shows you. The site uses relative paths, so it works on a custom domain with no code changes.
 
+## Brand
+
+- **Logo:** `public/media/ba-mark.png` (B mark, header) and `public/media/ba-logo.png` (full logo, footer) are white-and-gold versions of `Boiler Autonomy Racing Mark.png` for dark backgrounds. Favicons are `public/favicon.png` and `public/apple-touch-icon.png`.
+- **Fonts:** [Syncopate](https://fonts.google.com/specimen/Syncopate) for headings (matches the logo wordmark), Inter for body text, JetBrains Mono for small labels. Set in `src/index.css`.
+- **Colors:** gold `#cfb991` on near-black `#0a0a0a`.
+
 ## Purdue branding
 
 The header and footer show `public/media/purdue-logo.png`, a white-text version of the logo for dark backgrounds, set by `universityLogo` in `src/content.js`. Use of Purdue marks requires approval: see [Purdue Trademarks and Licensing](https://www.purdue.edu/trademarks-licensing/) and [Purdue Brand Studio](https://www.purdue.edu/brand-studio/brand/logos-usage/). If Brand Studio gives you an official reverse (dark-background) file, replace `purdue-logo.png` with it.

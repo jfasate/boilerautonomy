@@ -46,11 +46,11 @@ function Label({ children }) {
 function Logo() {
   return (
     <a href="#top" className="logo" aria-label={`${site.name} home`}>
-      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path d="M3 18 L12 4 L21 18 Z" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinejoin="round" />
-        <path d="M8 18 L12 11.5 L16 18" fill="currentColor" />
-      </svg>
-      <span>Boiler Autonomy</span>
+      <img className="logo-mark" src={media('ba-mark.png')} alt="" width="711" height="347" />
+      <span className="logo-text" aria-hidden="true">
+        <span className="logo-name">Boiler</span>
+        <span className="logo-sub">Autonomy</span>
+      </span>
     </a>
   )
 }
@@ -422,7 +422,7 @@ function Footer() {
       <div className="container">
         <div className="footer-top">
           <div>
-            <Logo />
+            <img className="footer-logo" src={media('ba-logo.png')} alt={site.name} width="900" height="509" loading="lazy" />
             <p className="footer-note">
               A student autonomous racing team at {site.school}, {site.location}.
             </p>
