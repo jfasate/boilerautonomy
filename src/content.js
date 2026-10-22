@@ -62,25 +62,24 @@ export const mission = {
   ],
 }
 
-// TODO: confirm each spec against the real car.
 export const specs = [
   { value: '1/10', label: 'Scale race platform' },
-  { value: 'LiDAR', label: '2D laser scanner for perception' },
-  { value: 'Jetson', label: 'NVIDIA onboard compute' },
-  { value: 'ROS 2', label: 'Software framework' },
+  { value: '270°', label: 'Hokuyo UTM-30LX LiDAR, 30 m range' },
+  { value: 'D435', label: 'Intel RealSense depth camera' },
+  { value: 'Orin', label: 'NVIDIA Jetson Orin Nano onboard compute' },
 ]
 
 // Hotspots are placed in percent of the top-down photo (x from left, y from top).
 export const hotspots = [
-  { x: 71, y: 47, title: '2D LiDAR', body: 'Scans the track many times per second to map walls and opponents.' },
-  { x: 51, y: 46, title: 'Onboard compute', body: 'Runs perception, planning and control on the car itself.' },
+  { x: 71, y: 47, title: 'Hokuyo UTM-30LX LiDAR', body: 'Sweeps 270° up to 30 m, 40 times a second, to map walls and opponents.' },
+  { x: 51, y: 46, title: 'NVIDIA Jetson Orin Nano', body: 'Runs perception, planning and control on the car itself.' },
   { x: 47, y: 25, title: 'LiPo power', body: 'Battery packs for the drive system and the electronics.' },
   { x: 32, y: 48, title: 'Power & motor electronics', body: 'Takes software commands and turns them into throttle and steering.' },
 ]
 
 // TODO: update to match the algorithms the team actually runs.
 export const stack = [
-  { n: '01', title: 'Perceive', body: 'Turn raw LiDAR scans into a live model of walls, free space and other cars.' },
+  { n: '01', title: 'Perceive', body: 'Fuse Hokuyo LiDAR scans and RealSense depth into a live model of walls, free space and other cars.' },
   { n: '02', title: 'Localize', body: 'Know where the car is on the map, every scan, using probabilistic state estimation.' },
   { n: '03', title: 'Plan', body: 'Compute a fast racing line and re-plan in real time around obstacles.' },
   { n: '04', title: 'Control', body: 'Track the plan at speed with steering and throttle control on the edge of grip.' },
