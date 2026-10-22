@@ -37,6 +37,7 @@ export const people = [
     name: 'Prof. Lingxi Li',
     role: 'Principal Investigator',
     email: 'lingxili@purdue.edu',
+    linkedin: 'https://www.linkedin.com/in/lingxi-li-08b4b0b/',
   },
   {
     name: 'Jayesh Fasate',
