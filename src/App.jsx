@@ -347,7 +347,7 @@ function Team() {
         ].map(([groupLabel, group]) => (
           <div className="people-group" key={groupLabel}>
             <p className="people-label">{group.length === 1 ? groupLabel.replace(/s$/, '') : groupLabel}</p>
-            <ul className="people">
+            <ul className={`people ${group.length > 4 ? 'people-many' : ''}`}>
               {group.map((p, i) => (
                 <Reveal as="li" key={p.name} delay={i * 0.08} className="person">
                   <p className="person-role">{p.role}</p>

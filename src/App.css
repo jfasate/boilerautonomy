@@ -971,6 +971,26 @@
   border-bottom: 1px solid var(--line);
 }
 
+@media (min-width: 1100px) {
+  .people-many {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .people-many .person {
+    padding: 26px 22px;
+  }
+
+  .people-many .person h3 {
+    font-size: 17px;
+  }
+
+  .people-many .person-links {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 700px) {
   .people {
     grid-template-columns: 1fr;
@@ -1357,6 +1377,7 @@
   font-size: 12px;
   color: var(--muted);
 }
+
 
 
 

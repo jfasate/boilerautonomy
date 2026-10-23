@@ -62,6 +62,36 @@ export const people = [
     email: 'bkolanu@purdue.edu',
     linkedin: 'https://www.linkedin.com/in/balamallareddykolanu/',
   },
+  {
+    name: 'Connor Coladonato',
+    role: 'Member',
+    email: 'ccoladon@purdue.edu',
+  },
+  {
+    name: 'Abhishek Kankipati',
+    role: 'Member',
+    email: 'akankip@purdue.edu',
+  },
+  {
+    name: 'Anish Devulapalli',
+    role: 'Member',
+    email: 'devulap0@purdue.edu',
+  },
+  {
+    name: 'Anand Krishnan',
+    role: 'Member',
+    email: 'krish454@purdue.edu',
+  },
+  {
+    name: 'Victor Agbara',
+    role: 'Member',
+    email: 'vagbara@purdue.edu',
+  },
+  {
+    name: 'Liam Yates',
+    role: 'Member',
+    email: 'yates63@purdue.edu',
+  },
 ]
 
 export const hero = {
