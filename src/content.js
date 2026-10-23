@@ -45,6 +45,10 @@ export const people = [
     linkedin: 'https://www.linkedin.com/in/lingxi-li-08b4b0b/',
   },
   {
+    name: 'Prof. Samuel Labi',
+    role: 'Principal Investigator',
+  },
+  {
     name: 'Jayesh Fasate',
     role: 'Founding team',
     email: 'jfasate@purdue.edu',
