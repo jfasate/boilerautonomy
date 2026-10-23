@@ -48,6 +48,7 @@ export const people = [
     name: 'Prof. Samuel Labi',
     role: 'Principal Investigator',
     email: 'labi@purdue.edu',
+    linkedin: 'https://www.linkedin.com/in/sam-labi-794ab115/',
   },
   {
     name: 'Jayesh Fasate',
