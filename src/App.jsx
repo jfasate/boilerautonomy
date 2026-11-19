@@ -298,8 +298,14 @@ function Racing() {
             <p className="caption">Autonomous laps on our test track</p>
           </Reveal>
           <Reveal className="video-card" delay={0.1}>
-            <img src={media('race-venue.webp')} alt="The car on a staging table beside a large F1TENTH race track lined with orange and yellow tubes" loading="lazy" width="2000" height="1125" />
-            <p className="caption">Ready to run at a race venue</p>
+            <video
+              src={media('time-trial.mp4')}
+              poster={media('time-trial-poster.webp')}
+              controls
+              preload="none"
+              playsInline
+            />
+            <p className="caption">Time trial from the car&apos;s onboard view</p>
           </Reveal>
         </div>
       </div>
